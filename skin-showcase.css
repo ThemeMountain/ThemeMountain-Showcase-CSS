@@ -1,0 +1,340 @@
+html, 
+body { 
+	overflow: hidden;
+	font-family: 'Lato', 'Helvetica Neue', sans-serif;
+}
+.body-background-image {
+	background-color:#232323;
+	background-image: linear-gradient(#333 2px, transparent 2px),
+	linear-gradient(90deg, #333 2px, transparent 2px),
+	linear-gradient(rgba(66,66,66,.3) 1px, transparent 1px),
+	linear-gradient(90deg, rgba(66,66,66,.3) 1px, transparent 1px);
+	background-size:100px 100px, 100px 100px, 20px 20px, 20px 20px;
+	background-position:-2px -2px, -2px -2px, -1px -1px, -1px -1px
+}
+
+#switcher-iframe {
+	width: 100%;
+	/* 	margin: 4.5rem 0 0 0; */
+	margin: 0;
+	border: medium none;
+	outline: medium none;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+#switcher {
+	width: 100%;
+	height: 4.6rem;
+	background: #181818;
+	border-bottom: none;
+	position: fixed;
+	top: 0;
+	z-index: 99999;
+}
+#switcher .align-left,
+#switcher .align-right{
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+}
+
+/* Switcher logo */
+#switcher .logo{
+	width: 4rem;
+	height: 4.5rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	opacity: 1;
+}
+#switcher .logo a{
+	-webkit-transition-property: opacity;
+	-moz-transition-property: opacity;
+	-o-transition-property: opacity;
+	-ms-transition-property: opacity;
+	transition-property: opacity;
+	-webkit-transition-duration: 500ms;
+	-moz-transition-duration: 500ms;
+	-o-transition-duration: 500ms;
+	-ms-transition-duration: 500ms;
+	transition-duration: 500ms;
+}
+#switcher .logo a:hover{
+	opacity: 0.5;
+}
+
+/* Switcher buttons */
+#switcher .button{
+	height: 4.5rem;
+	padding-left: 1.4rem;
+	padding-right: 1.4rem;
+	margin: 0;
+	line-height: 1.3;
+	text-align: center;
+	border: none;
+}
+#switcher .button.current{
+	color: #fff;
+}
+#switcher .button [class*="icon-"]:before{
+	margin: 0;
+}
+#switcher .button:hover{
+	background-color: #181818;
+	color: #fff;
+	border: none;
+}
+.switcher-buttons .button [class*="icon-"].small{
+	width: 1.7rem;
+	font-size: 1.7rem;
+}
+.switcher-buttons .button{
+	background: none;
+}
+#switcher .switch-device {
+/* 	display: none; */
+}
+#switcher .switch-device [class*="icon-"],
+#switcher #adspace-toggle [class*="icon-"]{
+	line-height: 1.6;
+}
+#switcher-purchase.button{
+	font-size: 0.9rem;
+	font-weight: bold;
+	color: #fff;
+	line-height: 2.2;
+	letter-spacing: 0.1rem;
+	text-align: left;
+	text-transform: uppercase;
+}
+#switcher-purchase.button:hover{
+	background-color: #333;
+}
+
+/* Dividers */
+.switcher-select,
+.switcher-select-label,
+#switcher-purchase.button,
+#switcher-purchase.button:hover{
+	border-right: 1px solid #303030;
+}
+.switcher-selects > .switcher-select:first-child{
+	border-left: 1px solid #303030;
+}
+
+/* Switcher select label */
+.switcher-select-label{
+	width: auto;
+	height: 4.5rem;
+	padding: 1.3rem 4rem 1.3rem 2.5rem;
+	font-size: 1rem;
+	font-weight: 400;
+	color: rgba(255,255,255,0.5);
+	line-height: 1.9;
+	letter-spacing: 0.1rem;
+	position: relative;
+}
+.switcher-select-label .arrow{
+	height: 1rem;
+	margin-top: -1px;
+	display: inline-block;
+	line-height: 1rem;
+	font-size: 1.8rem;
+	position: absolute;
+	top: 1.7rem;
+	right: 2.3rem;
+}
+
+/* Switcher select */
+.switcher-select{
+	width: 18rem;
+	height: 4.5rem;
+	font-size: 1.4rem;	
+	position: relative;
+	font-weight: 400;
+}
+.switcher-select:after{
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	display: inline-block;
+
+	/* Better Font Rendering */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+#theme-style .switcher-select:after,
+#theme-variations .switcher-select:after {
+	width: 1rem;
+	height: 1rem;
+	content: "\e63e";
+	color: #fff;
+	position: absolute;
+	top: 1.5rem;
+	right: 1.5rem;
+	left: auto;
+	z-index: 2;
+}
+.switcher-select .button{
+	border: none;
+	background-color: #181818;
+	color: #999;
+}
+#switcher .switcher-active{
+	width: 100%;
+	font-size: 0.9rem;
+	font-weight: 400;
+	color: rgba(255,255,255,0.5);
+	line-height: 2.2;
+	letter-spacing: 0.1rem;
+	text-align: left;
+	text-transform: uppercase;
+}
+.switcher-select .switcher-list{
+	width: 18rem;
+	text-align: left;
+	background-color: #181818;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	z-index: 101;
+	-webkit-transition-property: opacity, visibility;
+	-moz-transition-property: opacity, visibility;
+	-o-transition-property: opacity, visibility;
+	-ms-transition-property: opacity, visibility;
+	transition-property: opacity, visibility;
+	-webkit-transition-duration: 500ms;
+	-moz-transition-duration: 500ms;
+	-o-transition-duration: 500ms;
+	-ms-transition-duration: 500ms;
+	transition-duration: 500ms;
+}
+.switcher-select .switcher-list li{
+	background: none;
+	border-bottom: none;
+	float: none;
+}
+.switcher-select ul li a{
+	padding: 0 1.6rem;
+	font-size: 1.1rem;
+	color: #888; 
+	text-decoration: none;
+	text-transform: none;
+	display: block;
+	word-wrap: break-word;
+}
+.switcher-select ul li.current a{
+	color: #fff;
+}
+.switcher-select > ul > li > a{
+	margin: 0 ;
+	padding-left: 0;
+	padding-right: 0;
+	background-color: rgba(0,0,0,0);
+	line-height: 5rem;
+}
+.switcher-select ul li:hover > a{
+	background: #222222;
+	color: #ffffff;
+}
+.switcher-select .switcher-list li a{
+	padding: 1.2rem 1.5rem;
+	line-height: 1.8;
+	color: #888;
+}
+
+/* Product select label */
+.switcher-select .label.html{
+	padding: 0.1rem 0.2rem;
+	margin-top: 0.1rem;
+	background-color: #555;
+	border-color: #555;
+	color: #fff;
+	font-size: 0.8rem;
+	line-height: 1.4rem;
+	letter-spacing: 0;
+}
+.switcher-select .switcher-list .label.html{
+	background-color: #555;
+	border-color: #555;
+}
+
+/* Select hover */
+.switcher-select:hover .switcher-list{
+	visibility: visible;
+	opacity: 1;
+}
+
+/*
+	thumbnail
+*/
+
+#thumb_viwer {
+	width: 60rem;
+	max-width: 60rem;
+	height: 31rem;
+	background: #000;
+	border: 0.6rem solid #181818;
+	border-radius: 0.3rem;
+	position: absolute;
+	z-index: 1000;
+}
+
+#adspace-toggle {
+	display: none;
+}
+
+#tm-adspace {
+	height: 0;
+	background: #181818;
+	position: relative;
+	clear: both;
+	margin-top: 4.6rem;
+	overflow: hidden;
+}
+
+@media only screen and (max-width: 960px) {
+	.switcher-select,
+	.switcher-select .switcher-list{
+		width: 15rem;
+	}
+	#switcher .switch-device,
+	#thumb_viwer,
+	.label-960{
+		display: none !important;
+	}
+}
+@media only screen and (max-width: 880px) {
+	#theme-variations{
+		display: none;
+	}
+	.switcher-selects .switcher-select:first-child{
+		margin-right: 1px;
+		border-right: 1px solid #303030;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.switcher-select-label{
+		display: none;
+	}
+	#theme-variations{
+		display: none;
+	}
+}
+@media only screen and (max-width: 480px) {
+	#theme-variations,
+	#theme-style{
+		display: none;
+	}
+}
+
+/* for now ... */
+a#switcher-share_twitter{
+	display: none;
+}
+a#switcher-share_fb {
+	display: none;
+}
